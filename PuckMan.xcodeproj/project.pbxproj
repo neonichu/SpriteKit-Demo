@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8631703D189D93C100F680D4 /* PuckManFull.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631703B189D93C100F680D4 /* PuckManFull.png */; };
+		8631703E189D93C100F680D4 /* PuckManMouth.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631703C189D93C100F680D4 /* PuckManMouth.png */; };
+		86317040189D96B100F680D4 /* waka-waka.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8631703F189D96B100F680D4 /* waka-waka.mp3 */; };
+		86ACBC6C18A03A550072491B /* Ghost.png in Resources */ = {isa = PBXBuildFile; fileRef = 86ACBC6B18A03A550072491B /* Ghost.png */; };
+		86ACBC7118A059A60072491B /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86ACBC7018A059A60072491B /* GameController.framework */; };
+		86ACBC7418A05B450072491B /* BBUGameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 86ACBC7318A05B450072491B /* BBUGameOverScene.m */; };
 		86C36AA6189D8E2F003A1B5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C36AA5189D8E2F003A1B5B /* Foundation.framework */; };
 		86C36AA8189D8E2F003A1B5B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C36AA7189D8E2F003A1B5B /* CoreGraphics.framework */; };
 		86C36AAA189D8E2F003A1B5B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C36AA9189D8E2F003A1B5B /* UIKit.framework */; };
@@ -15,11 +21,17 @@
 		86C36AB8189D8E2F003A1B5B /* BBUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C36AB7189D8E2F003A1B5B /* BBUAppDelegate.m */; };
 		86C36ABE189D8E2F003A1B5B /* BBUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C36ABD189D8E2F003A1B5B /* BBUViewController.m */; };
 		86C36AC1189D8E2F003A1B5B /* BBUMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C36AC0189D8E2F003A1B5B /* BBUMyScene.m */; };
-		86C36AC3189D8E2F003A1B5B /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 86C36AC2189D8E2F003A1B5B /* Spaceship.png */; };
 		86C36AC5189D8E2F003A1B5B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86C36AC4189D8E2F003A1B5B /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8631703B189D93C100F680D4 /* PuckManFull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PuckManFull.png; sourceTree = "<group>"; };
+		8631703C189D93C100F680D4 /* PuckManMouth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PuckManMouth.png; sourceTree = "<group>"; };
+		8631703F189D96B100F680D4 /* waka-waka.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "waka-waka.mp3"; sourceTree = "<group>"; };
+		86ACBC6B18A03A550072491B /* Ghost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ghost.png; sourceTree = "<group>"; };
+		86ACBC7018A059A60072491B /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = System/Library/Frameworks/GameController.framework; sourceTree = SDKROOT; };
+		86ACBC7218A05B450072491B /* BBUGameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBUGameOverScene.h; sourceTree = "<group>"; };
+		86ACBC7318A05B450072491B /* BBUGameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBUGameOverScene.m; sourceTree = "<group>"; };
 		86C36AA2189D8E2F003A1B5B /* PuckMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuckMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86C36AA5189D8E2F003A1B5B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		86C36AA7189D8E2F003A1B5B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -34,7 +46,6 @@
 		86C36ABD189D8E2F003A1B5B /* BBUViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBUViewController.m; sourceTree = "<group>"; };
 		86C36ABF189D8E2F003A1B5B /* BBUMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBUMyScene.h; sourceTree = "<group>"; };
 		86C36AC0189D8E2F003A1B5B /* BBUMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBUMyScene.m; sourceTree = "<group>"; };
-		86C36AC2189D8E2F003A1B5B /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		86C36AC4189D8E2F003A1B5B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86ACBC7118A059A60072491B /* GameController.framework in Frameworks */,
 				86C36AA8189D8E2F003A1B5B /* CoreGraphics.framework in Frameworks */,
 				86C36AAA189D8E2F003A1B5B /* UIKit.framework in Frameworks */,
 				86C36AAC189D8E2F003A1B5B /* SpriteKit.framework in Frameworks */,
@@ -77,6 +89,7 @@
 			children = (
 				86C36AA7189D8E2F003A1B5B /* CoreGraphics.framework */,
 				86C36AA5189D8E2F003A1B5B /* Foundation.framework */,
+				86ACBC7018A059A60072491B /* GameController.framework */,
 				86C36AAB189D8E2F003A1B5B /* SpriteKit.framework */,
 				86C36AA9189D8E2F003A1B5B /* UIKit.framework */,
 			);
@@ -88,6 +101,8 @@
 			children = (
 				86C36AB6189D8E2F003A1B5B /* BBUAppDelegate.h */,
 				86C36AB7189D8E2F003A1B5B /* BBUAppDelegate.m */,
+				86ACBC7218A05B450072491B /* BBUGameOverScene.h */,
+				86ACBC7318A05B450072491B /* BBUGameOverScene.m */,
 				86C36ABF189D8E2F003A1B5B /* BBUMyScene.h */,
 				86C36AC0189D8E2F003A1B5B /* BBUMyScene.m */,
 				86C36ABC189D8E2F003A1B5B /* BBUViewController.h */,
@@ -110,8 +125,11 @@
 		86C36AE1189D8F16003A1B5B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				86ACBC6B18A03A550072491B /* Ghost.png */,
 				86C36AC4189D8E2F003A1B5B /* Images.xcassets */,
-				86C36AC2189D8E2F003A1B5B /* Spaceship.png */,
+				8631703B189D93C100F680D4 /* PuckManFull.png */,
+				8631703C189D93C100F680D4 /* PuckManMouth.png */,
+				8631703F189D96B100F680D4 /* waka-waka.mp3 */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -170,7 +188,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				86C36AC5189D8E2F003A1B5B /* Images.xcassets in Resources */,
-				86C36AC3189D8E2F003A1B5B /* Spaceship.png in Resources */,
+				86317040189D96B100F680D4 /* waka-waka.mp3 in Resources */,
+				8631703D189D93C100F680D4 /* PuckManFull.png in Resources */,
+				86ACBC6C18A03A550072491B /* Ghost.png in Resources */,
+				8631703E189D93C100F680D4 /* PuckManMouth.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86C36AC1189D8E2F003A1B5B /* BBUMyScene.m in Sources */,
+				86ACBC7418A05B450072491B /* BBUGameOverScene.m in Sources */,
 				86C36AB8189D8E2F003A1B5B /* BBUAppDelegate.m in Sources */,
 				86C36AB4189D8E2F003A1B5B /* main.m in Sources */,
 				86C36ABE189D8E2F003A1B5B /* BBUViewController.m in Sources */,
@@ -224,7 +246,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -257,7 +279,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -271,6 +293,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Supporting_Files/PuckMan-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting_Files/PuckMan-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
@@ -285,6 +308,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Supporting_Files/PuckMan-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting_Files/PuckMan-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
