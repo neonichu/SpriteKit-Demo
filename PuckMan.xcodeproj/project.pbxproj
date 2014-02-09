@@ -10,6 +10,18 @@
 		8631703D189D93C100F680D4 /* PuckManFull.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631703B189D93C100F680D4 /* PuckManFull.png */; };
 		8631703E189D93C100F680D4 /* PuckManMouth.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631703C189D93C100F680D4 /* PuckManMouth.png */; };
 		86317040189D96B100F680D4 /* waka-waka.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8631703F189D96B100F680D4 /* waka-waka.mp3 */; };
+		864D020B18A7A35700AF75EF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 864D020A18A7A35700AF75EF /* Cocoa.framework */; };
+		864D020C18A7A35700AF75EF /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C36AAB189D8E2F003A1B5B /* SpriteKit.framework */; };
+		864D021818A7A35700AF75EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 864D021718A7A35700AF75EF /* main.m */; };
+		864D021E18A7A35700AF75EF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 864D021D18A7A35700AF75EF /* MainMenu.xib */; };
+		864D022818A7A35700AF75EF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 864D022718A7A35700AF75EF /* Images.xcassets */; };
+		864D024818A7A6BE00AF75EF /* BBUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 864D024718A7A6BE00AF75EF /* BBUAppDelegate.m */; };
+		864D024C18A7A7CD00AF75EF /* BBUGameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 86ACBC7318A05B450072491B /* BBUGameOverScene.m */; };
+		864D024D18A7A7D000AF75EF /* BBUMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C36AC0189D8E2F003A1B5B /* BBUMyScene.m */; };
+		864D024E18A7AA1700AF75EF /* Ghost.png in Resources */ = {isa = PBXBuildFile; fileRef = 86ACBC6B18A03A550072491B /* Ghost.png */; };
+		864D024F18A7AA1B00AF75EF /* PuckManFull.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631703B189D93C100F680D4 /* PuckManFull.png */; };
+		864D025018A7AA1E00AF75EF /* PuckManMouth.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631703C189D93C100F680D4 /* PuckManMouth.png */; };
+		864D025118A7AA2200AF75EF /* waka-waka.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8631703F189D96B100F680D4 /* waka-waka.mp3 */; };
 		86ACBC6C18A03A550072491B /* Ghost.png in Resources */ = {isa = PBXBuildFile; fileRef = 86ACBC6B18A03A550072491B /* Ghost.png */; };
 		86ACBC7118A059A60072491B /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86ACBC7018A059A60072491B /* GameController.framework */; };
 		86ACBC7418A05B450072491B /* BBUGameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 86ACBC7318A05B450072491B /* BBUGameOverScene.m */; };
@@ -28,6 +40,18 @@
 		8631703B189D93C100F680D4 /* PuckManFull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PuckManFull.png; sourceTree = "<group>"; };
 		8631703C189D93C100F680D4 /* PuckManMouth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PuckManMouth.png; sourceTree = "<group>"; };
 		8631703F189D96B100F680D4 /* waka-waka.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "waka-waka.mp3"; sourceTree = "<group>"; };
+		864D020918A7A35700AF75EF /* PuckMan-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PuckMan-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		864D020A18A7A35700AF75EF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		864D020E18A7A35700AF75EF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		864D021018A7A35700AF75EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		864D021718A7A35700AF75EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = OSX/main.m; sourceTree = "<group>"; };
+		864D021918A7A35700AF75EF /* PuckMan-OSX-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PuckMan-OSX-Prefix.pch"; sourceTree = "<group>"; };
+		864D021D18A7A35700AF75EF /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		864D022718A7A35700AF75EF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = OSX/Images.xcassets; sourceTree = "<group>"; };
+		864D022E18A7A35700AF75EF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		864D024718A7A6BE00AF75EF /* BBUAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBUAppDelegate.m; path = OSX/BBUAppDelegate.m; sourceTree = "<group>"; };
+		864D024918A7A75D00AF75EF /* BBUAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BBUAppDelegate.h; path = OSX/BBUAppDelegate.h; sourceTree = "<group>"; };
+		864D024A18A7A78600AF75EF /* PuckMan-OSX-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PuckMan-OSX-Info.plist"; sourceTree = "<group>"; };
 		86ACBC6B18A03A550072491B /* Ghost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ghost.png; sourceTree = "<group>"; };
 		86ACBC7018A059A60072491B /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = System/Library/Frameworks/GameController.framework; sourceTree = SDKROOT; };
 		86ACBC7218A05B450072491B /* BBUGameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBUGameOverScene.h; sourceTree = "<group>"; };
@@ -50,6 +74,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		864D020618A7A35700AF75EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				864D020C18A7A35700AF75EF /* SpriteKit.framework in Frameworks */,
+				864D020B18A7A35700AF75EF /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		86C36A9F189D8E2F003A1B5B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -65,6 +98,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		864D024118A7A4DF00AF75EF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				86C36AC4189D8E2F003A1B5B /* Images.xcassets */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		864D024218A7A4E700AF75EF /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				864D022718A7A35700AF75EF /* Images.xcassets */,
+				864D021D18A7A35700AF75EF /* MainMenu.xib */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		864D024418A7A52500AF75EF /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				864D021718A7A35700AF75EF /* main.m */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		864D024518A7A57E00AF75EF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				86C36AB6189D8E2F003A1B5B /* BBUAppDelegate.h */,
+				86C36AB7189D8E2F003A1B5B /* BBUAppDelegate.m */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		864D024618A7A58900AF75EF /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				864D024918A7A75D00AF75EF /* BBUAppDelegate.h */,
+				864D024718A7A6BE00AF75EF /* BBUAppDelegate.m */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
 		86C36A99189D8E2F003A1B5B = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				86C36AA2189D8E2F003A1B5B /* PuckMan.app */,
+				864D020918A7A35700AF75EF /* PuckMan-OSX.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,11 +164,15 @@
 		86C36AA4189D8E2F003A1B5B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				864D020E18A7A35700AF75EF /* AppKit.framework */,
+				864D020A18A7A35700AF75EF /* Cocoa.framework */,
 				86C36AA7189D8E2F003A1B5B /* CoreGraphics.framework */,
 				86C36AA5189D8E2F003A1B5B /* Foundation.framework */,
+				864D021018A7A35700AF75EF /* Foundation.framework */,
 				86ACBC7018A059A60072491B /* GameController.framework */,
 				86C36AAB189D8E2F003A1B5B /* SpriteKit.framework */,
 				86C36AA9189D8E2F003A1B5B /* UIKit.framework */,
+				864D022E18A7A35700AF75EF /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -99,8 +180,8 @@
 		86C36AAD189D8E2F003A1B5B /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				86C36AB6189D8E2F003A1B5B /* BBUAppDelegate.h */,
-				86C36AB7189D8E2F003A1B5B /* BBUAppDelegate.m */,
+				864D024518A7A57E00AF75EF /* iOS */,
+				864D024618A7A58900AF75EF /* OS X */,
 				86ACBC7218A05B450072491B /* BBUGameOverScene.h */,
 				86ACBC7318A05B450072491B /* BBUGameOverScene.m */,
 				86C36ABF189D8E2F003A1B5B /* BBUMyScene.h */,
@@ -114,8 +195,11 @@
 		86C36AAE189D8E2F003A1B5B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				864D024418A7A52500AF75EF /* OS X */,
 				86C36AB3189D8E2F003A1B5B /* main.m */,
 				86C36AAF189D8E2F003A1B5B /* PuckMan-Info.plist */,
+				864D024A18A7A78600AF75EF /* PuckMan-OSX-Info.plist */,
+				864D021918A7A35700AF75EF /* PuckMan-OSX-Prefix.pch */,
 				86C36AB5189D8E2F003A1B5B /* PuckMan-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -125,8 +209,9 @@
 		86C36AE1189D8F16003A1B5B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				864D024218A7A4E700AF75EF /* OS X */,
+				864D024118A7A4DF00AF75EF /* iOS */,
 				86ACBC6B18A03A550072491B /* Ghost.png */,
-				86C36AC4189D8E2F003A1B5B /* Images.xcassets */,
 				8631703B189D93C100F680D4 /* PuckManFull.png */,
 				8631703C189D93C100F680D4 /* PuckManMouth.png */,
 				8631703F189D96B100F680D4 /* waka-waka.mp3 */,
@@ -137,6 +222,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		864D020818A7A35700AF75EF /* PuckMan-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 864D023F18A7A35700AF75EF /* Build configuration list for PBXNativeTarget "PuckMan-OSX" */;
+			buildPhases = (
+				864D020518A7A35700AF75EF /* Sources */,
+				864D020618A7A35700AF75EF /* Frameworks */,
+				864D020718A7A35700AF75EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PuckMan-OSX";
+			productName = "PuckMan-OSX";
+			productReference = 864D020918A7A35700AF75EF /* PuckMan-OSX.app */;
+			productType = "com.apple.product-type.application";
+		};
 		86C36AA1189D8E2F003A1B5B /* PuckMan */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 86C36ADB189D8E30003A1B5B /* Build configuration list for PBXNativeTarget "PuckMan" */;
@@ -178,11 +280,25 @@
 			projectRoot = "";
 			targets = (
 				86C36AA1189D8E2F003A1B5B /* PuckMan */,
+				864D020818A7A35700AF75EF /* PuckMan-OSX */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		864D020718A7A35700AF75EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				864D024F18A7AA1B00AF75EF /* PuckManFull.png in Resources */,
+				864D022818A7A35700AF75EF /* Images.xcassets in Resources */,
+				864D021E18A7A35700AF75EF /* MainMenu.xib in Resources */,
+				864D025018A7AA1E00AF75EF /* PuckManMouth.png in Resources */,
+				864D025118A7AA2200AF75EF /* waka-waka.mp3 in Resources */,
+				864D024E18A7AA1700AF75EF /* Ghost.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		86C36AA0189D8E2F003A1B5B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -198,6 +314,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		864D020518A7A35700AF75EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				864D024D18A7A7D000AF75EF /* BBUMyScene.m in Sources */,
+				864D021818A7A35700AF75EF /* main.m in Sources */,
+				864D024C18A7A7CD00AF75EF /* BBUGameOverScene.m in Sources */,
+				864D024818A7A6BE00AF75EF /* BBUAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		86C36A9E189D8E2F003A1B5B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -213,6 +340,55 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		864D023B18A7A35700AF75EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Supporting_Files/PuckMan-OSX-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting_Files/PuckMan-OSX-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		864D023C18A7A35700AF75EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Supporting_Files/PuckMan-OSX-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting_Files/PuckMan-OSX-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		86C36AD9189D8E30003A1B5B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -318,6 +494,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		864D023F18A7A35700AF75EF /* Build configuration list for PBXNativeTarget "PuckMan-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				864D023B18A7A35700AF75EF /* Debug */,
+				864D023C18A7A35700AF75EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		86C36A9D189D8E2F003A1B5B /* Build configuration list for PBXProject "PuckMan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

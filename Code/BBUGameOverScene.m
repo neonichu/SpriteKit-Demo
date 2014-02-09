@@ -21,7 +21,7 @@
 -(instancetype)initWithSize:(CGSize)size {
     self = [super initWithSize:size];
     if (self) {
-        self.backgroundColor = [UIColor blackColor];
+        self.backgroundColor = [SKColor blackColor];
         
         SKLabelNode* gameOverLabel = [SKLabelNode node];
         gameOverLabel.fontSize = 40.0;
@@ -45,10 +45,14 @@
     self.scoreLabel.text = [NSString stringWithFormat:@"%ld Punkte", (long)score];
 }
 
+#if TARGET_OS_IPHONE
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     if (self.dismissHandler) {
         self.dismissHandler();
     }
 }
+
+#endif
 
 @end

@@ -45,14 +45,14 @@ CGFloat DegreesToRadians(CGFloat degrees) {
 @implementation BBUMyScene
 
 -(void)createDots {
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathAddArc(path, &CGAffineTransformIdentity, 3.0, 3.0, 3.0, 0.0, 2 * M_PI, YES);
+    
     for (int i = 1; i < self.size.width / 25 - 1; i++) {
         for (int j = 1; j < self.size.height / 35; j++) {
-            UIBezierPath* path = [UIBezierPath new];
-            [path addArcWithCenter:CGPointMake(3.0, 3.0) radius:3.0 startAngle:0.0 endAngle:2 * M_PI clockwise:YES];
-            
             SKShapeNode* dot = [SKShapeNode node];
             dot.fillColor = [SKColor redColor];
-            dot.path = path.CGPath;
+            dot.path = path;
             dot.position = CGPointMake(26.0 * i, 35.0 * j - 6.0);
             dot.strokeColor = dot.fillColor;
             [self addChild:dot];
@@ -62,6 +62,8 @@ CGFloat DegreesToRadians(CGFloat degrees) {
             dot.physicsBody.collisionBitMask = worldCategory;
         }
     }
+    
+    CGPathRelease(path);
 }
 
 -(void)createEnemyAtPosition:(CGPoint)position {
@@ -81,22 +83,25 @@ CGFloat DegreesToRadians(CGFloat degrees) {
 }
 
 -(void)createLabyrinth {
-    UIBezierPath* path = [UIBezierPath new];
-    [path moveToPoint:CGPointZero];
-    [path addLineToPoint:CGPointMake(0.0, self.size.height / 2 - 25.0)];
-    [path moveToPoint:CGPointMake(0.0, self.size.height / 2 + 25.0)];
-    [path addLineToPoint:CGPointMake(0.0, self.size.height)];
-    [path addLineToPoint:CGPointMake(self.size.width, self.size.height)];
-    [path addLineToPoint:CGPointMake(self.size.width, self.size.height / 2 + 25.0)];
-    [path moveToPoint:CGPointMake(self.size.width, self.size.height / 2 - 25.0)];
-    [path addLineToPoint:CGPointMake(self.size.width, 0.0)];
-    [path addLineToPoint:CGPointZero];
+    CGMutablePathRef path = CGPathCreateMutable();
+    
+    CGPathMoveToPoint(path, &CGAffineTransformIdentity, 0.0, 0.0);
+    CGPathAddLineToPoint(path, &CGAffineTransformIdentity, 0.0, self.size.height / 2 - 25.0);
+    CGPathMoveToPoint(path, &CGAffineTransformIdentity, 0.0, self.size.height / 2 + 25.0);
+    CGPathAddLineToPoint(path, &CGAffineTransformIdentity, 0.0, self.size.height);
+    CGPathAddLineToPoint(path, &CGAffineTransformIdentity, self.size.width, self.size.height);
+    CGPathAddLineToPoint(path, &CGAffineTransformIdentity, self.size.width, self.size.height / 2 + 25.0);
+    CGPathMoveToPoint(path, &CGAffineTransformIdentity, self.size.width, self.size.height / 2 - 25.0);
+    CGPathAddLineToPoint(path, &CGAffineTransformIdentity, self.size.width, 0.0);
+    CGPathAddLineToPoint(path, &CGAffineTransformIdentity, 0.0, 0.0);
     
     SKShapeNode* shapeNode = [SKShapeNode node];
     shapeNode.lineWidth = 10.0;
-    shapeNode.path = path.CGPath;
+    shapeNode.path = path;
     shapeNode.strokeColor = [SKColor blueColor];
     [self addChild:shapeNode];
+    
+    CGPathRelease(path);
 }
 
 -(void)createPlayer {
@@ -258,6 +263,8 @@ CGFloat DegreesToRadians(CGFloat degrees) {
 
 #pragma mark - Touch handling
 
+#if TARGET_OS_IPHONE
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     if (touches.count != 1) {
         return;
@@ -293,5 +300,7 @@ CGFloat DegreesToRadians(CGFloat degrees) {
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.puckMan removeActionForKey:kPuckManMoveAction];
 }
+
+#endif
 
 @end
