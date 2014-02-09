@@ -34,7 +34,6 @@ CGFloat DegreesToRadians(CGFloat degrees) {
 
 @interface BBUMyScene () <SKPhysicsContactDelegate>
 
-@property NSMutableArray* dots;
 @property SKSpriteNode* puckMan;
 @property NSUInteger score;
 @property SKLabelNode* scoreLabel;
@@ -61,8 +60,6 @@ CGFloat DegreesToRadians(CGFloat degrees) {
             dot.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:3.0];
             dot.physicsBody.categoryBitMask = dotCategory;
             dot.physicsBody.collisionBitMask = worldCategory;
-            
-            [self.dots addObject:dot];
         }
     }
 }
@@ -176,7 +173,6 @@ CGFloat DegreesToRadians(CGFloat degrees) {
     self = [super initWithSize:size];
     if (self) {
         self.backgroundColor = [SKColor blackColor];
-        self.dots = [@[] mutableCopy];
         
         self.physicsWorld.contactDelegate = self;
         self.physicsWorld.gravity = CGVectorMake(0.0, 0.0);
@@ -192,8 +188,6 @@ CGFloat DegreesToRadians(CGFloat degrees) {
 
 -(void)reset {
     self.score = 0;
-    
-    [self.dots removeAllObjects];
     [self removeAllChildren];
 }
 
@@ -203,30 +197,26 @@ CGFloat DegreesToRadians(CGFloat degrees) {
 
 #pragma mark - SKPhysicsContactDelegate
 
--(BOOL)contact:(SKPhysicsContact*)contact hasCategory:(uint32_t)category {
-    return contact.bodyA.categoryBitMask == category || contact.bodyB.categoryBitMask == category;
-}
-
--(SKNode*)nodeMatchingPhysicsBodyInContact:(SKPhysicsContact*)contact inArray:(NSArray*)nodes {
-    for (SKNode* node in nodes) {
-        if (node.physicsBody == contact.bodyA || node.physicsBody == contact.bodyB) {
-            return node;
-        }
-    }
-    return nil;
-}
 
 -(void)didBeginContact:(SKPhysicsContact *)contact {
-    if ([self contact:contact hasCategory:playerCategory] && [self contact:contact hasCategory:dotCategory]) {
-        SKNode* dot = [self nodeMatchingPhysicsBodyInContact:contact inArray:self.dots];
-        [dot removeFromParent];
-        [self.dots removeObject:dot];
+    SKPhysicsBody *firstBody, *secondBody;
+    
+    if (contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask) {
+        firstBody = contact.bodyA;
+        secondBody = contact.bodyB;
+    } else {
+        firstBody = contact.bodyB;
+        secondBody = contact.bodyA;
+    }
+    
+    if (((firstBody.categoryBitMask & playerCategory) != 0) && ((secondBody.categoryBitMask & dotCategory) != 0)) {
+        [secondBody.node removeFromParent];
         
         self.score += 50;
         [self updateScore];
     }
     
-    if ([self contact:contact hasCategory:playerCategory] && [self contact:contact hasCategory:enemyCategory]) {
+    if (((firstBody.categoryBitMask & playerCategory) != 0) && ((secondBody.categoryBitMask & enemyCategory) != 0)) {
         [self reset];
         
         BBUGameOverScene* scene = [BBUGameOverScene sceneWithSize:self.size];
