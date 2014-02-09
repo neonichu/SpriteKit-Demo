@@ -42,7 +42,7 @@
 -(void)setScore:(NSInteger)score {
     _score = score;
     
-    self.scoreLabel.text = [NSString stringWithFormat:@"%d Punkte", score];
+    self.scoreLabel.text = [NSString stringWithFormat:@"%ld Punkte", (long)score];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

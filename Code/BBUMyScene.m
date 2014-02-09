@@ -159,7 +159,7 @@ CGFloat DegreesToRadians(CGFloat degrees) {
 }
 
 -(void)updateScore {
-    self.scoreLabel.text = [NSString stringWithFormat:@"Punkte: %d", self.score];
+    self.scoreLabel.text = [NSString stringWithFormat:@"Punkte: %lu", (unsigned long)self.score];
 }
 
 #pragma mark -
