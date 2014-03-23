@@ -130,8 +130,8 @@ CGFloat DegreesToRadians(CGFloat degrees) {
     SKAction* animate = [SKAction animateWithTextures:@[ full, mouth ] timePerFrame:0.1];
     [self.puckMan runAction:[SKAction repeatActionForever:animate]];
     
-    //SKAction* wakaWaka = [SKAction playSoundFileNamed:@"waka-waka.mp3" waitForCompletion:YES];
-    //[self.puckMan runAction:[SKAction repeatActionForever:wakaWaka]];
+    SKAction* wakaWaka = [SKAction playSoundFileNamed:@"waka-waka.mp3" waitForCompletion:YES];
+    [self.puckMan runAction:[SKAction repeatActionForever:wakaWaka]];
 }
 
 -(void)createScoreLabel {
