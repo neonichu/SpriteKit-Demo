@@ -196,10 +196,6 @@ CGFloat DegreesToRadians(CGFloat degrees) {
     [self removeAllChildren];
 }
 
--(void)update:(CFTimeInterval)currentTime {
-    /* Called before each frame is rendered */
-}
-
 #pragma mark - SKPhysicsContactDelegate
 
 
