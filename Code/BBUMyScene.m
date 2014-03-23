@@ -66,6 +66,14 @@ CGFloat DegreesToRadians(CGFloat degrees) {
     CGPathRelease(path);
 }
 
+-(void)createEnemies {
+    for (int i = 0; i < 4; i++) {
+        CGFloat xPosition = (arc4random_uniform((self.size.width / 25) - 2) + 1) * 25.0;
+        CGFloat yPosition = (arc4random_uniform((self.size.height / 35) - 2) + 1) * 35.0;
+        [self createEnemyAtPosition:CGPointMake(xPosition, yPosition)];
+    }
+}
+
 -(void)createEnemyAtPosition:(CGPoint)position {
     SKSpriteNode* enemy = [SKSpriteNode spriteNodeWithImageNamed:@"Ghost"];
     enemy.position = position;
@@ -74,10 +82,11 @@ CGFloat DegreesToRadians(CGFloat degrees) {
     
     enemy.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:enemy.size];
     enemy.physicsBody.categoryBitMask = enemyCategory;
-    enemy.physicsBody.collisionBitMask = worldCategory | playerCategory;
+    enemy.physicsBody.collisionBitMask = 0;
+    enemy.physicsBody.contactTestBitMask = worldCategory;
     
-    CGFloat byX = (arc4random_uniform(3) - 1) * 10.0;
-    CGFloat byY = (arc4random_uniform(3) - 1) * 10.0;
+    CGFloat byX = ((NSInteger)arc4random_uniform(3) - 1) * 10.0;
+    CGFloat byY = byX == 0.0 ? ((NSInteger)arc4random_uniform(3) - 1) * 10.0 : 0.0;
     SKAction* moveAction = [SKAction moveByX:byX y:byY duration:0.2];
     [enemy runAction:[SKAction repeatActionForever:moveAction] withKey:kEnemyMoveAction];
 }
@@ -160,6 +169,40 @@ CGFloat DegreesToRadians(CGFloat degrees) {
     [self.puckMan runAction:[SKAction repeatActionForever:moveAction] withKey:kPuckManMoveAction];
 }
 
+-(void)performGameOverAnimation {
+    SKEmitterNode* emitter = [SKEmitterNode node];
+    emitter.position = self.puckMan.position;
+    
+    emitter.particleBirthRate = 10.0;
+    emitter.particleColor = [SKColor yellowColor];
+    emitter.particleLifetime = 1.0;
+    emitter.particleSize = CGSizeMake(1.0, 1.0);
+    emitter.particleSpeed = 10.0;
+    emitter.emissionAngleRange = DegreesToRadians(360);
+    
+    [self.puckMan runAction:[SKAction sequence:@[ [SKAction fadeOutWithDuration:0.01],
+                                                  [SKAction runBlock:^{
+        [self addChild:emitter];
+        [emitter runAction:[SKAction sequence:@[ [SKAction waitForDuration:2.0], [SKAction runBlock:^{
+            [self showGameOverScreen];
+        }] ]]];
+    }], [SKAction removeFromParent], ]]];
+}
+
+-(void)showGameOverScreen {
+    [self reset];
+    
+    BBUGameOverScene* scene = [BBUGameOverScene sceneWithSize:self.size];
+    scene.score = self.score;
+    [self addChild:scene];
+    
+    __weak typeof(self) sself = self;
+    scene.dismissHandler = ^() {
+        [sself reset];
+        [sself createNodes];
+    };
+}
+
 -(void)updateScore {
     self.scoreLabel.text = [NSString stringWithFormat:@"Punkte: %lu", (unsigned long)self.score];
 }
@@ -169,7 +212,7 @@ CGFloat DegreesToRadians(CGFloat degrees) {
 -(void)createNodes {
     [self createLabyrinth];
     [self createDots];
-    [self createEnemyAtPosition:CGPointMake(25.0, 25.0)];
+    [self createEnemies];
     [self createPlayer];
     [self createScoreLabel];
 }
@@ -210,25 +253,22 @@ CGFloat DegreesToRadians(CGFloat degrees) {
         secondBody = contact.bodyA;
     }
     
-    if (((firstBody.categoryBitMask & playerCategory) != 0) && ((secondBody.categoryBitMask & dotCategory) != 0)) {
-        [secondBody.node removeFromParent];
-        
-        self.score += 50;
-        [self updateScore];
+    if (((firstBody.categoryBitMask & playerCategory) != 0) && ((secondBody.categoryBitMask & enemyCategory) != 0)) {
+        [self performGameOverAnimation];
     }
     
-    if (((firstBody.categoryBitMask & playerCategory) != 0) && ((secondBody.categoryBitMask & enemyCategory) != 0)) {
-        [self reset];
+    if (((firstBody.categoryBitMask & worldCategory) != 0) && ((secondBody.categoryBitMask & enemyCategory) != 0)) {
+        CGFloat byX = 0.0, byY = 0.0;
         
-        BBUGameOverScene* scene = [BBUGameOverScene sceneWithSize:self.size];
-        scene.score = self.score;
-        [self addChild:scene];
+        if (contact.contactPoint.y < 15.0) { byY = 10.0; }
+        if (contact.contactPoint.x < 15.0) { byX = 10.0; }
         
-        __weak typeof(self) sself = self;
-        scene.dismissHandler = ^() {
-            [sself reset];
-            [sself createNodes];
-        };
+        if (contact.contactPoint.y > self.size.height - 15.0) { byY = -10.0; }
+        if (contact.contactPoint.x > self.size.width - 15.0) { byX = -10.0; }
+        
+        [secondBody.node removeActionForKey:kEnemyMoveAction];
+        [secondBody.node runAction:[SKAction repeatActionForever:[SKAction moveByX:byX y:byY duration:0.2]]
+                           withKey:kEnemyMoveAction];
     }
 }
 
